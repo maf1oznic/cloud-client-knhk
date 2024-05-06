@@ -1,0 +1,93 @@
+.uploader {
+  width: 400px; /* Увеличена ширина */
+  height: 250px; /* Уменьшена высота */
+  position: fixed;
+  background-color: #f4f4f4; /* Светлый фон */
+  bottom: 10px;
+  right: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  border: 2px solid #007BFF;
+}
+
+.uploader__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.uploader__title {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.uploader__close {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.uploader__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.upload-file {
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.upload-file__name {
+    white-space: nowrap;      /* Запрет переноса текста на новую строку */
+    overflow: hidden;         /* Скрытие текста, выходящего за границы элемента */
+    text-overflow: ellipsis;  /* Добавление троеточия, если текст не помещается */
+    max-width: 85%;           /* Увеличенная максимальная ширина имени файла */
+  }
+  
+.upload-file__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.upload-file__progress-bar {
+  height: 1rem;
+  border-radius: 8px;
+  background-color: #566885;
+  position: relative; /* Добавим относительное позиционирование контейнера прогресс-бара */
+  display: flex;
+  align-items: center; /* Выравнивание дочерних элементов по центру по вертикали */
+  margin: 3px 0;
+}
+
+.upload-file__upload-bar {
+  background-color: #007bff;
+  border-radius: 8px;
+  height: 100%; /* Устанавливаем высоту, чтобы она была равна родителю */
+}
+
+.upload-file__percent {
+  color: #e9e6e6;
+  position: absolute;
+  width: 100%; /* Размеры, равные родительскому элементу */
+  text-align: center; /* Выравнивание текста по центру */
+  font-size: 0.8rem;
+}
+
