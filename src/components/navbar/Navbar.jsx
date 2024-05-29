@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
 import Logo from "../../assets/img/navbar-logo.png";
 import { NavLink } from "react-router-dom";
@@ -6,8 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../reducers/userReducer";
 
 const Navbar = () => {
+    const [menuActive, setMenuActive] = useState(false);
     const isAuth = useSelector((state) => state.user.isAuth);
     const dispatch = useDispatch();
+
+    const toggleMenu = () => {
+        setMenuActive(!menuActive);
+    };
 
     return (
         <nav className="navbar">
@@ -20,32 +25,29 @@ const Navbar = () => {
                         Облако КНХК
                     </a>
                 </div>
-                <div className="navbar-wrap">
-                    <ul className="navbar-menu">
+                <div className={`navbar-wrap`}>
+                    <ul className={`navbar-menu ${menuActive ? 'active' : ''}`}>
                         {!isAuth && (
                             <li>
-                                <a href="">
-                                    <NavLink to="/login">Вход</NavLink>
-                                </a>
+                                <NavLink to="/login" onClick={toggleMenu}>Вход</NavLink>
                             </li>
                         )}
                         {!isAuth && (
                             <li>
-                                <a href="">
-                                    <NavLink to="/registration">
-                                        Регистрация
-                                    </NavLink>
-                                </a>
+                                <NavLink to="/registration" onClick={toggleMenu}>Регистрация</NavLink>
                             </li>
                         )}
                         {isAuth && (
                             <li>
-                                <a href="" onClick={() => dispatch(logout())}>
+                                <a href="" onClick={() => { dispatch(logout()); toggleMenu(); }}>
                                     Выход
                                 </a>
                             </li>
                         )}
                     </ul>
+                    <div className="navbar-toggle" onClick={toggleMenu}>
+                        &#9776;
+                    </div>
                 </div>
             </div>
         </nav>

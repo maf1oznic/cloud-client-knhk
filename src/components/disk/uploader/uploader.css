@@ -91,3 +91,10 @@
   font-size: 0.8rem;
 }
 
+@media screen and (max-width: 768px) {
+  .uploader {
+    width: 300px; /* Увеличена ширина */
+    height: 150px; /* Уменьшена высота */
+  }
+
+}

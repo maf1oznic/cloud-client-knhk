@@ -154,3 +154,19 @@ option {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .disk {
+    padding: 25px;
+  }
+  .disk__btns {
+    flex-direction: column;
+  }
+  .disk__upload-label {
+    margin-top: 10px;
+  }
+  .disk__search {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+}
